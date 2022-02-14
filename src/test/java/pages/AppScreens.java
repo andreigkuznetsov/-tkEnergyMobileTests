@@ -11,15 +11,41 @@ import static io.qameta.allure.Allure.step;
 public class AppScreens {
 
     private final String forgot_password_screen_title = "Сброс пароля",
-            registration_screen_title = "Регистрация по телефону";
+            registration_screen_title = "Регистрация по телефону",
+            main_screen_title = "ТК Энергия",
+            calendarHeaderText = "от",
+            contactsTitle = "Контакты",
+            calculatorTitle = "Калькулятор",
+            moreTitle = "Дополнительно",
+            invoiceSearchText = "Номер накладной",
+            settingsText = "Настройки",
+            citiesText = "Города",
+            citySearchValue = "Калуга",
+            contactPhoneTest = "Контакнтые телефоны";
 
     private SelenideElement
             forgetPasswordLink = $(MobileBy.id("ru.nrg_tk.mobileclient:id/button_forget_password")),
             headerTextArea = $(byClassName("android.widget.TextView")),
             registrationLink = $(MobileBy.id("ru.nrg_tk.mobileclient:id/button_reg")),
-            headerBackButton = $(byClassName("android.widget.ImageButton"));
+            headerBackButton = $(byClassName("android.widget.ImageButton")),
+            skipLink = $(MobileBy.id("ru.nrg_tk.mobileclient:id/button_skip")),
+            headerMainScreensTextArea = $(MobileBy.id("ru.nrg_tk.mobileclient:id/toolbar")),
+            calendarLink = $(MobileBy.id("ru.nrg_tk.mobileclient:id/Button_sending_date_ranges")),
+            calendarWidgetHeader = $(MobileBy.id("ru.nrg_tk.mobileclient:id/mdtp_date_picker_header")),
+            calendarCloseLink = $(MobileBy.id("ru.nrg_tk.mobileclient:id/mdtp_cancel")),
+            moreButtonArea = $(byClassName("android.support.v7.app.ActionBar$Tab")),
+            searchStartAction = $(MobileBy.id("ru.nrg_tk.mobileclient:id/action_search")),
+            InvoiceSearchArea = $(MobileBy.id("ru.nrg_tk.mobileclient:id/search_src_text")),
+            gamburgerMenu = $(byClassName("android.widget.ImageView")),
+            settingsTitle = $(MobileBy.id("ru.nrg_tk.mobileclient:id/title")),
+            headerMoreScreensTextArea = $(MobileBy.id("ru.nrg_tk.mobileclient:id/action_bar")),
+            citiesSearchButton = $(MobileBy.id("ru.nrg_tk.mobileclient:id/button_cities")),
+            citiesSearchField = $(MobileBy.id("ru.nrg_tk.mobileclient:id/search_src_text")),
+            citiesSearchResultField = $(MobileBy.id("ru.nrg_tk.mobileclient:id/recyclerView_Cities")),
+            contactPhonesButton = $(MobileBy.id("ru.nrg_tk.mobileclient:id/button_contact_phones"));
 
-    //public AddLanguageComponent addLanguage = new AddLanguageComponent();
+
+        //public AddLanguageComponent addLanguage = new AddLanguageComponent();
     //public SwitchPrivateDataSendComponent SwitchPrivateDataSend = new SwitchPrivateDataSendComponent();
 
 
@@ -58,6 +84,171 @@ public class AppScreens {
         return this;
     }
 
+    public AppScreens checkSkipLink() {
+        step("Переходим на основную группу экранов", () ->
+                skipLink.click());
 
+        return this;
+    }
+
+    public AppScreens checkMainScreen() {
+        step("Проверяем, что совершен переход на основную группу экранов", () ->
+                headerMainScreensTextArea.shouldHave(text(main_screen_title)));
+
+        return this;
+    }
+
+    public AppScreens checkCalendarLink() {
+        step("Открываем каледарь для редактирования", () ->
+                calendarLink.click());
+
+        return this;
+    }
+
+    public AppScreens checkCalendarWidget() {
+        step("Проверяем, что календарь открылся", () ->
+                calendarWidgetHeader.shouldHave(text(calendarHeaderText)));
+
+        return this;
+    }
+
+    public AppScreens checkCalendarClose() {
+        step("Закрываем виджет календаря", () ->
+                calendarCloseLink.click());
+
+        return this;
+    }
+
+    public AppScreens checkContactsLink() {
+        step("Переходим на экран Контакты", () ->
+                headerTextArea.shouldHave(text(contactsTitle)).click());
+
+        return this;
+    }
+
+    public AppScreens checkContactsScreen() {
+        step("Проверяем, что совершен переход на экран Контакты", () ->
+                headerMainScreensTextArea.shouldHave(text(contactsTitle)));
+
+        return this;
+    }
+
+    public AppScreens checkCalcLink() {
+        step("Переходим на экран Калькулятор", () ->
+                headerTextArea.shouldHave(text(calculatorTitle)).click());
+
+        return this;
+    }
+
+    public AppScreens checkCalcScreen() {
+        step("Проверяем, что совершен переход на экран Калькулятор", () ->
+                headerMainScreensTextArea.shouldHave(text(calculatorTitle)));
+
+        return this;
+    }
+
+    public AppScreens checkMoreLink() {
+        step("Переходим на экран Дополнительно", () ->
+                moreButtonArea.click());
+
+        return this;
+    }
+
+    public AppScreens checkMoreScreen() {
+        step("Проверяем, что совершен переход на экран Дополнительно", () ->
+                headerMainScreensTextArea.shouldHave(text(moreTitle)));
+
+        return this;
+    }
+
+    public AppScreens checkInvoiceSearchField() {
+        step("Открываем поле поиска накладной", () ->
+                searchStartAction.click());
+
+        return this;
+    }
+
+    public AppScreens checkInvoiceSearchText() {
+        step("Проверяем, что поле поиска накладной активно", () ->
+                InvoiceSearchArea.shouldHave(text(invoiceSearchText)));
+
+        return this;
+    }
+
+    public AppScreens checkSettingsGamMenu() {
+        step("Активируем гамбургер-меню", () ->
+                gamburgerMenu.click());
+
+        return this;
+    }
+
+    public AppScreens checkSettingsLink() {
+        step("Переходим на экран Настроек", () ->
+                settingsTitle.shouldHave(text(settingsText)).click());
+
+        return this;
+    }
+
+    public AppScreens checkSettingsText() {
+        step("Проверяем, что перешли на экран Настроек", () ->
+                headerMoreScreensTextArea.shouldHave(text(settingsText)));
+
+        return this;
+    } //начало элемента
+
+    public AppScreens checkCitiesButton() {
+        step("Открываем экран поиска филиалов", () ->
+                citiesSearchButton.click());
+
+        return this;
+    }
+
+    public AppScreens checkCitiesText() {
+        step("Проверяем, что открыт экран поиска филиалов", () ->
+                headerMoreScreensTextArea.shouldHave(text(citiesText)));
+
+        return this;
+    }
+
+    public AppScreens checkCitiesSearchField() {
+        step("Открываем поле поиска городов", () ->
+                searchStartAction.click());
+
+        return this;
+    }
+
+    public AppScreens checkCitiesSearchValue() {
+        step("Выполняем поиск города", () ->
+                citiesSearchField.setValue(citySearchValue).pressEnter());
+
+        return this;
+    }
+
+    public AppScreens checkCitiesSearchResult() {
+        step("Проверяем, что результат поиска релевантен", () ->
+                citiesSearchResultField.shouldHave(text(citySearchValue)));
+
+        return this;
+    } //конец элемента
+
+    public AppScreens checkPhonesLink() {
+        step("Переходим на экран Контактные телефоны", () ->
+                contactPhonesButton.click());
+
+        return this;
+    }
+
+    public AppScreens checkPhonesScreen() {
+        step("Проверяем, что совершен переход на экран Контактные телефоны", () ->
+                headerMoreScreensTextArea.shouldHave(text(contactPhoneTest)));
+
+        return this;
+    }
 
 }
+
+
+
+
+
+

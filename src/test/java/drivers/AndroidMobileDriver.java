@@ -13,10 +13,14 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import javax.annotation.Nonnull;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import static config.ProjectData.*;
 import static utils.FileUtils.getAbsolutePath;
 
 public class AndroidMobileDriver implements WebDriverProvider {
+
     @Nonnull
     @Override
     public WebDriver createDriver(@Nonnull DesiredCapabilities desiredCapabilities) {
@@ -63,23 +67,6 @@ public class AndroidMobileDriver implements WebDriverProvider {
         return new AndroidDriver<>(RealHelper.getRealServerUrl(), desiredCapabilities);
     }
 
-    public AndroidDriver<WebElement> getSelenoidMobileDriver(@Nonnull DesiredCapabilities desiredCapabilities) {
-        desiredCapabilities.setCapability("platformName", selenoidConfig.platformName());
-        desiredCapabilities.setCapability("deviceName", selenoidConfig.deviceName());
-        desiredCapabilities.setCapability("version", selenoidConfig.version());
-        desiredCapabilities.setCapability("locale", "en");
-        desiredCapabilities.setCapability("language", "en");
-        desiredCapabilities.setCapability("appPackage", "ru.nrg_tk.mobileclient");
-        desiredCapabilities.setCapability("appActivity",
-                "ru.nrg_tk.mobileclient.activities.SplashActivity");
-        desiredCapabilities.setCapability("app", selenoidConfig.appURL());
-
-        desiredCapabilities.setCapability("enableVNC", true);
-        desiredCapabilities.setCapability("enableVideo", true);
-
-        return new AndroidDriver<>(SelenoidHelper.getSelenoidServerUrl(), desiredCapabilities);
-    }
-
     public AndroidDriver<WebElement> getBrowserStackMobileDriver(DesiredCapabilities desiredCapabilities) {
         desiredCapabilities.setCapability("browserstack.user", browserStackConfig.browserStackUsername());
         desiredCapabilities.setCapability("browserstack.key", browserStackConfig.browserStackPassword());
@@ -95,4 +82,23 @@ public class AndroidMobileDriver implements WebDriverProvider {
 
         return new AndroidDriver<>(BrowserStackHelper.getBrowserstackUrl(), desiredCapabilities);
     }
+
+    public AndroidDriver<WebElement> getSelenoidMobileDriver(@Nonnull DesiredCapabilities desiredCapabilities) {
+        desiredCapabilities.setCapability("platformName", selenoidConfig.platformName());
+        desiredCapabilities.setCapability("deviceName", selenoidConfig.deviceName());
+        desiredCapabilities.setCapability("version", selenoidConfig.version());
+        desiredCapabilities.setCapability("locale", "en");
+        desiredCapabilities.setCapability("language", "en");
+        desiredCapabilities.setCapability("appPackage", "ru.nrg_tk.mobileclient");
+        desiredCapabilities.setCapability("appActivity",
+                "ru.nrg_tk.mobileclient.activities.SplashActivity");
+        desiredCapabilities.setCapability("app", selenoidConfig.appURL());
+
+        desiredCapabilities.setCapability("enableVNC", true);
+        desiredCapabilities.setCapability("enableVideo", true);
+
+        return new AndroidDriver<>(SelenoidHelper.getSelenoidServerUrl(), desiredCapabilities);
+
+    }
+
 }
