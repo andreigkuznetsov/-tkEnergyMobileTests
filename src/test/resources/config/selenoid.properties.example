@@ -1,0 +1,10 @@
+selenoidUrl=https://%s:%s@selenoid.autotests.cloud/wd/hub
+username=
+password=
+videoUrl=https://selenoid.autotests.cloud/video/
+deviceName=android
+platformName=Android
+osVersion=8.1
+appUrl=src/test/resources/apk/app-alpha-universal-release.apk
+
+

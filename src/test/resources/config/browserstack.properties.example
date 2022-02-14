@@ -1,0 +1,10 @@
+browserStackURL=http://hub.browserstack.com/wd/hub
+browserStackUsername=
+browserStackPassword=
+app=bs://657e5d516139f13a0ddbb276a79a69ef38a8bbae
+browserStackVideoURL=https://api-cloud.browserstack.com/app-automate/sessions/
+device=Samsung Galaxy S9
+osVersion=8.0
+
+
+

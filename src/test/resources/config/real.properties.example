@@ -1,0 +1,6 @@
+localServerUrl=http://127.0.0.1:4723/wd/hub
+platformName=Android
+deviceName=30a353f7
+version=11.0
+appUrl=src/test/resources/apk/app-alpha-universal-release.apk
+
