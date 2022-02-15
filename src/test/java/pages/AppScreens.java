@@ -2,26 +2,15 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import io.appium.java_client.MobileBy;
+import pages.components.SearchBranchComponent;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byClassName;
 import static com.codeborne.selenide.Selenide.$;
 import static io.qameta.allure.Allure.step;
+import static tests.TestData.*;
 
 public class AppScreens {
-
-    private final String forgot_password_screen_title = "Сброс пароля",
-            registration_screen_title = "Регистрация по телефону",
-            main_screen_title = "ТК Энергия",
-            calendarHeaderText = "от",
-            contactsTitle = "Контакты",
-            calculatorTitle = "Калькулятор",
-            moreTitle = "Дополнительно",
-            invoiceSearchText = "Номер накладной",
-            settingsText = "Настройки",
-            citiesText = "Города",
-            citySearchValue = "Калуга",
-            contactPhoneTest = "Контакнтые телефоны";
 
     private SelenideElement
             forgetPasswordLink = $(MobileBy.id("ru.nrg_tk.mobileclient:id/button_forget_password")),
@@ -39,15 +28,10 @@ public class AppScreens {
             gamburgerMenu = $(byClassName("android.widget.ImageView")),
             settingsTitle = $(MobileBy.id("ru.nrg_tk.mobileclient:id/title")),
             headerMoreScreensTextArea = $(MobileBy.id("ru.nrg_tk.mobileclient:id/action_bar")),
-            citiesSearchButton = $(MobileBy.id("ru.nrg_tk.mobileclient:id/button_cities")),
-            citiesSearchField = $(MobileBy.id("ru.nrg_tk.mobileclient:id/search_src_text")),
-            citiesSearchResultField = $(MobileBy.id("ru.nrg_tk.mobileclient:id/recyclerView_Cities")),
             contactPhonesButton = $(MobileBy.id("ru.nrg_tk.mobileclient:id/button_contact_phones"));
 
 
-        //public AddLanguageComponent addLanguage = new AddLanguageComponent();
-    //public SwitchPrivateDataSendComponent SwitchPrivateDataSend = new SwitchPrivateDataSendComponent();
-
+    public SearchBranchComponent searchBranch = new SearchBranchComponent();
 
     public AppScreens checkForgetPassLink() {
         step("Переходим на экран с формой восстановления пароля", () ->
@@ -194,42 +178,7 @@ public class AppScreens {
                 headerMoreScreensTextArea.shouldHave(text(settingsText)));
 
         return this;
-    } //начало элемента
-
-    public AppScreens checkCitiesButton() {
-        step("Открываем экран поиска филиалов", () ->
-                citiesSearchButton.click());
-
-        return this;
     }
-
-    public AppScreens checkCitiesText() {
-        step("Проверяем, что открыт экран поиска филиалов", () ->
-                headerMoreScreensTextArea.shouldHave(text(citiesText)));
-
-        return this;
-    }
-
-    public AppScreens checkCitiesSearchField() {
-        step("Открываем поле поиска городов", () ->
-                searchStartAction.click());
-
-        return this;
-    }
-
-    public AppScreens checkCitiesSearchValue() {
-        step("Выполняем поиск города", () ->
-                citiesSearchField.setValue(citySearchValue).pressEnter());
-
-        return this;
-    }
-
-    public AppScreens checkCitiesSearchResult() {
-        step("Проверяем, что результат поиска релевантен", () ->
-                citiesSearchResultField.shouldHave(text(citySearchValue)));
-
-        return this;
-    } //конец элемента
 
     public AppScreens checkPhonesLink() {
         step("Переходим на экран Контактные телефоны", () ->
