@@ -1,15 +1,29 @@
 package tests;
 
+import annotations.JiraIssue;
+import annotations.JiraIssues;
+import annotations.Microservice;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
-import static tests.TestData.citySearchValue;
+import static tests.TestData.*;
 
-@DisplayName("Тестирование мобильного приложения ТК Энергия")
+@Owner("Andrei Kuznetsov")
+@Tag("Mobile")
+@JiraIssues({@JiraIssue("HOMEWORK-")})
+@DisplayName("Тестирование мобильного приложения \"ТК Энергия\"")
 public class AndroidTests extends TestBase {
 
     @Test
     @DisplayName("Проверка доступности экрана с формой восстановления пароля")
+    @Tags({@Tag("High"), @Tag("Smoke"), @Tag("Regress")})
+    @Microservice("Mobile")
+    @Feature("Экран восстановления пароля")
+    @Story("Экраны авторизации и регистрации в приложении")
+    @Severity(SeverityLevel.BLOCKER)
     void passRecoveryScreenTest() {
             AppScreens.checkForgetPassLink()
                     .checkForgetPassScreen()
@@ -19,6 +33,11 @@ public class AndroidTests extends TestBase {
 
     @Test
     @DisplayName("Проверка доступности экрана с формой регистрации")
+    @Tags({@Tag("High"), @Tag("Smoke"), @Tag("Regress")})
+    @Microservice("Mobile")
+    @Feature("Экран регистрации")
+    @Story("Экраны авторизации и регистрации в приложении")
+    @Severity(SeverityLevel.BLOCKER)
     void userRegistrationScreenTest() {
         AppScreens.checkRegistrationLink()
                 .checkRegistrationScreen()
@@ -27,73 +46,62 @@ public class AndroidTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Проверка доступности экранов основного меню")
-    void mainScreensTest() {
-        AppScreens.checkSkipLink()
-                .checkMainScreen()
-                .checkContactsLink()
-                .checkContactsScreen()
-                .checkCalcLink()
-                .checkCalcScreen()
-                .checkMoreLink()
-                .checkMoreScreen();
-
-    }
-
-    @Test
-    @DisplayName("Проверка доступности календаря на экране Накладные")
+    @DisplayName("Проверка доступности и работы календаря на экране \"Накладные\"")
+    @Tags({@Tag("Low"), @Tag("Regress")})
+    @Microservice("Mobile")
+    @Owner("Gleb Danilov")
+    @Feature("Выбор в календаре периода отображения накладных")
+    @Story("Поиск накладных на перевозку")
+    @Severity(SeverityLevel.NORMAL)
     void calendarScreenTest() {
-        AppScreens.checkSkipLink()
-                .checkCalendarLink()
-                .checkCalendarWidget()
-                .checkCalendarClose()
-                .checkMainScreen();
+        AppScreens.checkSkipLink();
+        AppScreens.calendarComponent.setCalendarWidget(calendarHeaderFromText, calendarHeaderToText);
 
     }
 
     @Test
     @DisplayName("Проверка доступности строки поиска накладной на перевозку")
+    @Tags({@Tag("High"), @Tag("Smoke"), @Tag("Regress")})
+    @Microservice("Mobile")
+    @Feature("Поиск накладной на перевозку по номеру")
+    @Story("Поиск накладных на перевозку")
+    @Severity(SeverityLevel.CRITICAL)
     void searchInvoiceTest() {
         AppScreens.checkSkipLink()
-                .checkMainScreen()
                 .checkInvoiceSearchField()
                 .checkInvoiceSearchText()
-                .returnToMainScreen()
-                .checkMainScreen();
+                .returnToMainScreen();
 
     }
 
     @Test
-    @DisplayName("Проверка доступности экрана Настройки")
+    @DisplayName("Проверка доступности экрана \"Настройки\"")
+    @Tags({@Tag("High"), @Tag("Regress")})
+    @Microservice("Mobile")
+    @Feature("Доступность экрана \"Настройки\"")
+    @Story("Раздел \"Настройки\"")
+    @Severity(SeverityLevel.CRITICAL)
     void settingsScreenTest() {
         AppScreens.checkSkipLink()
-                .checkMainScreen()
                 .checkSettingsGamMenu()
                 .checkSettingsLink()
-                .checkSettingsText();
+                .checkSettingsText()
+                .checkSettingsAppVerText();
 
     }
 
     @Test
-    @DisplayName("Проверка доступности экрана Контактные телефоны")
-    void contactPhonesScreenTest() {
-        AppScreens.checkSkipLink()
-                .checkMainScreen()
-                .checkMoreLink()
-                .checkMoreScreen()
-                .checkPhonesLink()
-                .checkPhonesScreen();
+    @DisplayName("Проверка переключателя отправки уведомлений")
+    @Tags({@Tag("Low"), @Tag("Regress")})
+    @Microservice("Mobile")
+    @Owner("Gleb Danilov")
+    @Feature("Отправка уведомлений клиенту")
+    @Story("Раздел \"Настройки\"")
+    @Severity(SeverityLevel.NORMAL)
+    void setNotificationsReceiveTest() {
+        AppScreens.checkSkipLink();
+        AppScreens.notificationComponent.setNotificationSwitcher(notificationsWidgetOn, notificationsWidgetOff);
 
     }
 
-    @Test
-    @DisplayName("Проверка поиска города (филиала компании)")
-    void branchSearchTest() {
-        AppScreens.checkSkipLink()
-                .checkMainScreen()
-                .checkMoreLink()
-                .checkMoreScreen();
-        AppScreens.searchBranch.searchCity(citySearchValue);
-
-    }
 }

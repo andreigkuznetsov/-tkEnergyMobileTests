@@ -1,12 +1,17 @@
 package pages;
 
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.appium.java_client.MobileBy;
-import pages.components.SearchBranchComponent;
+import pages.components.CalendarComponent;
+import pages.components.NotificationComponent;
 
+import static com.codeborne.selenide.CollectionCondition.texts;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byClassName;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 import static io.qameta.allure.Allure.step;
 import static tests.TestData.*;
 
@@ -18,20 +23,14 @@ public class AppScreens {
             registrationLink = $(MobileBy.id("ru.nrg_tk.mobileclient:id/button_reg")),
             headerBackButton = $(byClassName("android.widget.ImageButton")),
             skipLink = $(MobileBy.id("ru.nrg_tk.mobileclient:id/button_skip")),
-            headerMainScreensTextArea = $(MobileBy.id("ru.nrg_tk.mobileclient:id/toolbar")),
-            calendarLink = $(MobileBy.id("ru.nrg_tk.mobileclient:id/Button_sending_date_ranges")),
-            calendarWidgetHeader = $(MobileBy.id("ru.nrg_tk.mobileclient:id/mdtp_date_picker_header")),
-            calendarCloseLink = $(MobileBy.id("ru.nrg_tk.mobileclient:id/mdtp_cancel")),
-            moreButtonArea = $(byClassName("android.support.v7.app.ActionBar$Tab")),
             searchStartAction = $(MobileBy.id("ru.nrg_tk.mobileclient:id/action_search")),
             InvoiceSearchArea = $(MobileBy.id("ru.nrg_tk.mobileclient:id/search_src_text")),
             gamburgerMenu = $(byClassName("android.widget.ImageView")),
             settingsTitle = $(MobileBy.id("ru.nrg_tk.mobileclient:id/title")),
-            headerMoreScreensTextArea = $(MobileBy.id("ru.nrg_tk.mobileclient:id/action_bar")),
-            contactPhonesButton = $(MobileBy.id("ru.nrg_tk.mobileclient:id/button_contact_phones"));
+            appVersionArea = $(MobileBy.id("android:id/summary"));
 
-
-    public SearchBranchComponent searchBranch = new SearchBranchComponent();
+    public CalendarComponent calendarComponent = new CalendarComponent();
+    public NotificationComponent notificationComponent = new NotificationComponent();
 
     public AppScreens checkForgetPassLink() {
         step("Переходим на экран с формой восстановления пароля", () ->
@@ -75,76 +74,6 @@ public class AppScreens {
         return this;
     }
 
-    public AppScreens checkMainScreen() {
-        step("Проверяем, что совершен переход на основную группу экранов", () ->
-                headerMainScreensTextArea.shouldHave(text(main_screen_title)));
-
-        return this;
-    }
-
-    public AppScreens checkCalendarLink() {
-        step("Открываем каледарь для редактирования", () ->
-                calendarLink.click());
-
-        return this;
-    }
-
-    public AppScreens checkCalendarWidget() {
-        step("Проверяем, что календарь открылся", () ->
-                calendarWidgetHeader.shouldHave(text(calendarHeaderText)));
-
-        return this;
-    }
-
-    public AppScreens checkCalendarClose() {
-        step("Закрываем виджет календаря", () ->
-                calendarCloseLink.click());
-
-        return this;
-    }
-
-    public AppScreens checkContactsLink() {
-        step("Переходим на экран Контакты", () ->
-                headerTextArea.shouldHave(text(contactsTitle)).click());
-
-        return this;
-    }
-
-    public AppScreens checkContactsScreen() {
-        step("Проверяем, что совершен переход на экран Контакты", () ->
-                headerMainScreensTextArea.shouldHave(text(contactsTitle)));
-
-        return this;
-    }
-
-    public AppScreens checkCalcLink() {
-        step("Переходим на экран Калькулятор", () ->
-                headerTextArea.shouldHave(text(calculatorTitle)).click());
-
-        return this;
-    }
-
-    public AppScreens checkCalcScreen() {
-        step("Проверяем, что совершен переход на экран Калькулятор", () ->
-                headerMainScreensTextArea.shouldHave(text(calculatorTitle)));
-
-        return this;
-    }
-
-    public AppScreens checkMoreLink() {
-        step("Переходим на экран Дополнительно", () ->
-                moreButtonArea.click());
-
-        return this;
-    }
-
-    public AppScreens checkMoreScreen() {
-        step("Проверяем, что совершен переход на экран Дополнительно", () ->
-                headerMainScreensTextArea.shouldHave(text(moreTitle)));
-
-        return this;
-    }
-
     public AppScreens checkInvoiceSearchField() {
         step("Открываем поле поиска накладной", () ->
                 searchStartAction.click());
@@ -175,27 +104,19 @@ public class AppScreens {
 
     public AppScreens checkSettingsText() {
         step("Проверяем, что перешли на экран Настроек", () ->
-                headerMoreScreensTextArea.shouldHave(text(settingsText)));
+                headerTextArea.shouldHave(text(settingsText)));
 
         return this;
     }
 
-    public AppScreens checkPhonesLink() {
-        step("Переходим на экран Контактные телефоны", () ->
-                contactPhonesButton.click());
-
-        return this;
-    }
-
-    public AppScreens checkPhonesScreen() {
-        step("Проверяем, что совершен переход на экран Контактные телефоны", () ->
-                headerMoreScreensTextArea.shouldHave(text(contactPhoneTest)));
+    public AppScreens checkSettingsAppVerText() {
+        step("Проверяем, что указана правильная версия приложения", () ->
+                appVersionArea.shouldHave(text(appVersion)));
 
         return this;
     }
 
 }
-
 
 
 
