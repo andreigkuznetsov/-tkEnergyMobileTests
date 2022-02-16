@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 import static tests.TestData.*;
 
 @Tag("Mobile")
-@JiraIssues({@JiraIssue("HOMEWORK-")})
+@JiraIssues({@JiraIssue("HOMEWORK-338")})
 @DisplayName("Тестирование мобильного приложения \"ТК Энергия\"")
 public class AndroidTests extends TestBase {
 
