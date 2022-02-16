@@ -2,6 +2,7 @@ package tests;
 
 import annotations.JiraIssue;
 import annotations.JiraIssues;
+import annotations.Layer;
 import annotations.Microservice;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
@@ -18,6 +19,7 @@ public class AndroidTests extends TestBase {
 
     @Test
     @DisplayName("Проверка доступности экрана с формой восстановления пароля")
+    @Layer("UI Mobile Tests")
     @Tags({@Tag("High"), @Tag("Smoke"), @Tag("Regress")})
     @Microservice("Mobile")
     @Owner("Andrei Kuznetsov")
@@ -34,6 +36,7 @@ public class AndroidTests extends TestBase {
     @Test
     @DisplayName("Проверка доступности экрана с формой регистрации")
     @Tags({@Tag("High"), @Tag("Smoke"), @Tag("Regress")})
+    @Layer("UI Mobile Tests")
     @Microservice("Mobile")
     @Owner("Andrei Kuznetsov")
     @Feature("Экран регистрации")
@@ -95,6 +98,7 @@ public class AndroidTests extends TestBase {
 
     @Test
     @DisplayName("Проверка переключателя отправки уведомлений")
+    @Layer("UI Mobile Tests")
     @Tags({@Tag("Low"), @Tag("Regress")})
     @Microservice("Mobile")
     @Owner("Gleb Danilov")
