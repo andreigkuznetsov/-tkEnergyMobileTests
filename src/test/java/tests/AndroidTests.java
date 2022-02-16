@@ -51,6 +51,7 @@ public class AndroidTests extends TestBase {
 
     @Test
     @DisplayName("Проверка доступности и работы календаря на экране \"Накладные\"")
+    @Layer("UI Mobile Tests")
     @Tags({@Tag("Low"), @Tag("Regress")})
     @Microservice("Mobile")
     @Owner("Gleb Danilov")
@@ -65,6 +66,7 @@ public class AndroidTests extends TestBase {
 
     @Test
     @DisplayName("Проверка доступности строки поиска накладной на перевозку")
+    @Layer("UI Mobile Tests")
     @Tags({@Tag("High"), @Tag("Smoke"), @Tag("Regress")})
     @Microservice("Mobile")
     @Owner("Andrei Kuznetsov")
@@ -81,6 +83,7 @@ public class AndroidTests extends TestBase {
 
     @Test
     @DisplayName("Проверка доступности экрана \"Настройки\"")
+    @Layer("UI Mobile Tests")
     @Tags({@Tag("High"), @Tag("Regress")})
     @Microservice("Mobile")
     @Owner("Andrei Kuznetsov")
