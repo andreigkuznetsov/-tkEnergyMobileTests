@@ -11,7 +11,6 @@ import org.junit.jupiter.api.Test;
 
 import static tests.TestData.*;
 
-@Owner("Andrei Kuznetsov")
 @Tag("Mobile")
 @JiraIssues({@JiraIssue("HOMEWORK-")})
 @DisplayName("Тестирование мобильного приложения \"ТК Энергия\"")
@@ -21,6 +20,7 @@ public class AndroidTests extends TestBase {
     @DisplayName("Проверка доступности экрана с формой восстановления пароля")
     @Tags({@Tag("High"), @Tag("Smoke"), @Tag("Regress")})
     @Microservice("Mobile")
+    @Owner("Andrei Kuznetsov")
     @Feature("Экран восстановления пароля")
     @Story("Экраны авторизации и регистрации в приложении")
     @Severity(SeverityLevel.BLOCKER)
@@ -35,6 +35,7 @@ public class AndroidTests extends TestBase {
     @DisplayName("Проверка доступности экрана с формой регистрации")
     @Tags({@Tag("High"), @Tag("Smoke"), @Tag("Regress")})
     @Microservice("Mobile")
+    @Owner("Andrei Kuznetsov")
     @Feature("Экран регистрации")
     @Story("Экраны авторизации и регистрации в приложении")
     @Severity(SeverityLevel.BLOCKER)
@@ -63,6 +64,7 @@ public class AndroidTests extends TestBase {
     @DisplayName("Проверка доступности строки поиска накладной на перевозку")
     @Tags({@Tag("High"), @Tag("Smoke"), @Tag("Regress")})
     @Microservice("Mobile")
+    @Owner("Andrei Kuznetsov")
     @Feature("Поиск накладной на перевозку по номеру")
     @Story("Поиск накладных на перевозку")
     @Severity(SeverityLevel.CRITICAL)
@@ -78,6 +80,7 @@ public class AndroidTests extends TestBase {
     @DisplayName("Проверка доступности экрана \"Настройки\"")
     @Tags({@Tag("High"), @Tag("Regress")})
     @Microservice("Mobile")
+    @Owner("Andrei Kuznetsov")
     @Feature("Доступность экрана \"Настройки\"")
     @Story("Раздел \"Настройки\"")
     @Severity(SeverityLevel.CRITICAL)
