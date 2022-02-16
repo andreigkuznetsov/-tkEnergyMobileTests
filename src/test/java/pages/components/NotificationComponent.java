@@ -30,7 +30,7 @@ public class NotificationComponent {
         step("Проверяем, что виджет Получать уведомления включен", () ->
                 switchWidget.shouldHave(text(notificationsWidgetOn)));
 
-        step("Переключаем виджет Получать уведомления в сотсояние выключен", () ->
+        step("Переключаем виджет Получать уведомления в состояние выключен", () ->
                 switchWidget.click());
 
         step("Проверяем, что виджет Получать уведомления выключен", () ->
