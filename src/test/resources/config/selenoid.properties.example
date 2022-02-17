@@ -5,6 +5,6 @@ videoUrl=https://selenoid.autotests.cloud/video/
 deviceName=android
 platformName=Android
 osVersion=8.1
-appUrl=src/test/resources/apk/app-alpha-universal-release.apk
+appUrl=https://github.com/andreigkuznetsov/tkEnergyMobileTests/blob/master/src/test/resources/apk/1.44-api3-prod.apk
 
 
