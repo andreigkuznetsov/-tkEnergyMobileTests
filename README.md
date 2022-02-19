@@ -218,8 +218,8 @@ COMMENT - комментарий, который отображается в с�
 ### После прохождения тестов, в telegram канал приходит оповещение с результами
 
 <p align="left">
-  <img src="/img/pics/telegram_results_1.jpg" alt="Telegram" width="440">
-  <img src="/img/pics/telegram_results_2.jpg" alt="Telegram" width="402">
+  <img src="/img/pics/telegram_results_1.jpg" alt="Telegram" width="400">
+  <img src="/img/pics/telegram_results_2.jpg" alt="Telegram" width="362">
 </p>
 
 ## Пример запуска и прохождения UI теста на видео: 
