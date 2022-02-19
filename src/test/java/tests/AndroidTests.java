@@ -34,7 +34,7 @@ public class AndroidTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Проверка доступности экрана с формой регистрации")
+    @DisplayName("Проверка доступности экрана с формой регистрации клиента")
     @Tags({@Tag("High"), @Tag("Smoke"), @Tag("Regress")})
     @Layer("UI Mobile Tests")
     @Microservice("Mobile")
@@ -65,7 +65,7 @@ public class AndroidTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Проверка доступности строки поиска накладной на перевозку")
+    @DisplayName("Проверка доступности формы поиска накладной на перевозку")
     @Layer("UI Mobile Tests")
     @Tags({@Tag("High"), @Tag("Smoke"), @Tag("Regress")})
     @Microservice("Mobile")
@@ -100,7 +100,7 @@ public class AndroidTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Проверка переключателя отправки уведомлений")
+    @DisplayName("Проверка работы переключателя отправки уведомлений")
     @Layer("UI Mobile Tests")
     @Tags({@Tag("Low"), @Tag("Regress")})
     @Microservice("Mobile")
