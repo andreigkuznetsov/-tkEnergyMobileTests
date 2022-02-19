@@ -219,7 +219,7 @@ COMMENT - комментарий, который отображается в с�
 
 <p align="left">
   <img src="/img/pics/telegram_results_1.jpg" alt="Telegram" width="400">
-  <img src="/img/pics/telegram_results_2.jpg" alt="Telegram" width="366">
+  <img src="/img/pics/telegram_results_2.jpg" alt="Telegram" width="365">
 </p>
 
 ## Пример запуска и прохождения UI теста на видео: 
