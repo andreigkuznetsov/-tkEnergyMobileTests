@@ -13,9 +13,9 @@
 
 ## Стек технологий:
 
-![Intelij_IDEA](/img/logo/Intelij_IDEA.png)![Java](/img/logo/Java.png)![Selenide](/img/logo/Selenide.png)![Selenoid](/img/logo/Selenoid.png)![Docker](/img/logo/Docker.png)![Browserstack](/img/logo/Browserstack.png)![Appium](/img/logo/Appium.png)![Gradle](/img/logo/Gradle.png)![JUnit5](/img/logo/JUnit5.png)![Allure Report](/img/logo/Allure_Report.png)![AllureTestOps](/img/logo/AllureTestOps.png)![Github](/img/logo/Github.png)![Jenkins](/img/logo/Jenkins.png)![RestAssured](/img/logo/Rest-Assured.png)![Telegram](/img/logo/Telegram.png)![Jira](/img/logo/Jira.png)
+![Intelij_IDEA](/img/logo/Intelij_IDEA.png)![Java](/img/logo/Java.png)![Selenide](/img/logo/Selenide.png)![Selenoid](/img/logo/Selenoid.png)![Docker](/img/logo/Docker.png)![Browserstack](/img/logo/Browserstack.png)![Appium](/img/logo/Appium.png)![Android Studio](/img/logo/android_studio.png)![Gradle](/img/logo/Gradle.png)![JUnit5](/img/logo/JUnit5.png)![Allure Report](/img/logo/Allure_Report.png)![AllureTestOps](/img/logo/AllureTestOps.png)![Github](/img/logo/Github.png)![Jenkins](/img/logo/Jenkins.png)![RestAssured](/img/logo/Rest-Assured.png)![Telegram](/img/logo/Telegram.png)![Jira](/img/logo/Jira.png)
 
-<b>Java, Selenide, Selenoid, Docker, Browserstack, Appium, Gradle, JUnit5, Allure Reports, TestOps, GitHub, Jenkins, RestAssured, Telegram (уведомления), Jira</b>
+<b>Java, Selenide, Selenoid, Docker, Browserstack, Appium, Android Studio, Gradle, JUnit5, Allure Reports, TestOps, GitHub, Jenkins, RestAssured, Telegram (уведомления), Jira</b>
 #
 - В данном проекте автотесты написаны на <b>Java</b> с использованием фреймворка <b>Selenide</b> для UI-тестов и библиотеки <b>REST-Assured</b> для записи видео прохождения тестов.
 
@@ -29,7 +29,7 @@
 
 - <b>Selenoid</b> используется для запуска браузеров в контейнерах <b>Docker</b>.
 
-- При помощи <b>Appium</b> выполняются автотесты локально (на реальном устройстве и в эмуляторе) 
+- При помощи <b>Android Studio</b> и <b>Appium</b> запускаются автотесты локально (на реальном устройстве и в эмуляторе) 
 
 - <b>Allure Report</b>, <b>Allure TestOps</b>, <b>Jira</b>, <b>Telegram Bot</b> используются для визуализации и анализа результатов тестирования.
 
