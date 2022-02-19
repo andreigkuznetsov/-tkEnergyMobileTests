@@ -51,13 +51,13 @@ gradle clean test -DdeviceHost=browserstack
 gradle clean test -DdeviceHost=selenoid
 ```
 
-### Для запуска тестов в эмуляторе + Appium:
+### Для запуска тестов в эмуляторе:
 
 ```bash
 gradle clean test -DdeviceHost=emulation
 ```
 
-### Для запуска тестов реальном устройстве + Appium:
+### Для запуска тестов реальном устройстве:
 
 ```bash
 gradle clean test -DdeviceHost=real
