@@ -13,9 +13,9 @@
 
 ## Стек технологий:
 
-![Intelij_IDEA](/img/logo/Intelij_IDEA.png)![Java](/img/logo/Java.png)![Selenide](/img/logo/Selenide.png)![Selenoid](/img/logo/Selenoid.png)![Browserstack](/img/logo/Browserstack.png)![Appium](/img/logo/Appium.png)![Gradle](/img/logo/Gradle.png)![JUnit5](/img/logo/JUnit5.png)![Allure Report](/img/logo/Allure_Report.png)![AllureTestOps](/img/logo/AllureTestOps.png)![Github](/img/logo/Github.png)![Jenkins](/img/logo/Jenkins.png)![RestAssured](/img/logo/Rest-Assured.png)![Telegram](/img/logo/Telegram.png)![Jira](/img/logo/Jira.png)
+![Intelij_IDEA](/img/logo/Intelij_IDEA.png)![Java](/img/logo/Java.png)![Selenide](/img/logo/Selenide.png)![Selenoid](/img/logo/Selenoid.png)![Docker](/img/logo/Docker.png)![Browserstack](/img/logo/Browserstack.png)![Appium](/img/logo/Appium.png)![Gradle](/img/logo/Gradle.png)![JUnit5](/img/logo/JUnit5.png)![Allure Report](/img/logo/Allure_Report.png)![AllureTestOps](/img/logo/AllureTestOps.png)![Github](/img/logo/Github.png)![Jenkins](/img/logo/Jenkins.png)![RestAssured](/img/logo/Rest-Assured.png)![Telegram](/img/logo/Telegram.png)![Jira](/img/logo/Jira.png)
 
-<b>Java, Selenide, Selenoid, Browserstack, Appium, Gradle, JUnit5, Allure Reports, TestOps, GitHub, Jenkins, RestAssured, Telegram (уведомления), Jira</b>
+<b>Java, Selenide, Selenoid, Docker, Browserstack, Appium, Gradle, JUnit5, Allure Reports, TestOps, GitHub, Jenkins, RestAssured, Telegram (уведомления), Jira</b>
 #
 - В данном проекте автотесты написаны на <b>Java</b> с использованием фреймворка <b>Selenide</b> для UI-тестов и библиотеки <b>REST-Assured</b> для записи видео прохождения тестов.
 
@@ -111,7 +111,7 @@ gradle clean test
 - <b>-DdeviceName</b> - марка и модель устройства, на котором будут проходить тесты
 - <b>-DosVersion</b> - версия операционной системы Android, на которой будут проходить тесты
 
-### Для запуска тестов в эмуляторе + Appium и на реальном устройстве + Appium:
+### Для запуска тестов в эмуляторе или на реальном устройстве:
 
 ```bash
 gradle clean test 
@@ -218,10 +218,10 @@ COMMENT - комментарий, который отображается в с�
 ### После прохождения тестов, в telegram канал приходит оповещение с результами
 
 <p align="left">
-  <img src="/img/pics/telegram_results_1.jpg" alt="Telegram" width="440">
-  <img src="/img/pics/telegram_results_2.jpg" alt="Telegram" width="381">
+  <img src="/img/pics/telegram_results_1.jpg" alt="Telegram" width="400">
+  <img src="/img/pics/telegram_results_2.jpg" alt="Telegram" width="365">
 </p>
 
-## Пример запуска и прохождения UI теста на видео: 
+## Пример запуска и прохождения теста на видео: 
 
 ![video_test](/img/pics/video_test.gif)
