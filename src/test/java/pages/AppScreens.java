@@ -1,33 +1,29 @@
 package pages;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.appium.java_client.MobileBy;
 import pages.components.CalendarComponent;
 import pages.components.NotificationComponent;
 
-import static com.codeborne.selenide.CollectionCondition.texts;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byClassName;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
 import static io.qameta.allure.Allure.step;
 import static tests.TestData.*;
 
 public class AppScreens {
 
-    private SelenideElement
-            forgetPasswordLink = $(MobileBy.id("ru.nrg_tk.mobileclient:id/button_forget_password")),
-            headerTextArea = $(byClassName("android.widget.TextView")),
-            registrationLink = $(MobileBy.id("ru.nrg_tk.mobileclient:id/button_reg")),
-            headerBackButton = $(byClassName("android.widget.ImageButton")),
-            skipLink = $(MobileBy.id("ru.nrg_tk.mobileclient:id/button_skip")),
-            searchStartAction = $(MobileBy.id("ru.nrg_tk.mobileclient:id/action_search")),
-            InvoiceSearchArea = $(MobileBy.id("ru.nrg_tk.mobileclient:id/search_src_text")),
-            gamburgerMenu = $(byClassName("android.widget.ImageView")),
-            settingsTitle = $(MobileBy.id("ru.nrg_tk.mobileclient:id/title")),
-            appVersionArea = $(MobileBy.id("android:id/summary"));
+    private final SelenideElement
+            forgetPasswordLink = $(MobileBy.id("ru.nrg_tk.mobileclient:id/button_forget_password"));
+    private final SelenideElement headerTextArea = $(byClassName("android.widget.TextView"));
+    private final SelenideElement registrationLink = $(MobileBy.id("ru.nrg_tk.mobileclient:id/button_reg"));
+    private final SelenideElement headerBackButton = $(byClassName("android.widget.ImageButton"));
+    private final SelenideElement skipLink = $(MobileBy.id("ru.nrg_tk.mobileclient:id/button_skip"));
+    private final SelenideElement searchStartAction = $(MobileBy.id("ru.nrg_tk.mobileclient:id/action_search"));
+    private final SelenideElement InvoiceSearchArea = $(MobileBy.id("ru.nrg_tk.mobileclient:id/search_src_text"));
+    private final SelenideElement gamburgerMenu = $(byClassName("android.widget.ImageView"));
+    private final SelenideElement settingsTitle = $(MobileBy.id("ru.nrg_tk.mobileclient:id/title"));
+    private final SelenideElement appVersionArea = $(MobileBy.id("android:id/summary"));
 
     public CalendarComponent calendarComponent = new CalendarComponent();
     public NotificationComponent notificationComponent = new NotificationComponent();

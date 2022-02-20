@@ -27,9 +27,9 @@ public class AndroidTests extends TestBase {
     @Story("Экраны авторизации и регистрации в приложении")
     @Severity(SeverityLevel.BLOCKER)
     void passRecoveryScreenTest() {
-            AppScreens.checkForgetPassLink()
-                    .checkForgetPassScreen()
-                    .returnToMainScreen();
+        AppScreens.checkForgetPassLink()
+                .checkForgetPassScreen()
+                .returnToMainScreen();
 
     }
 
@@ -60,7 +60,8 @@ public class AndroidTests extends TestBase {
     @Severity(SeverityLevel.NORMAL)
     void calendarScreenTest() {
         AppScreens.checkSkipLink();
-        AppScreens.calendarComponent.setCalendarWidget(calendarHeaderFromText, calendarHeaderToText);
+        AppScreens.calendarComponent
+                .setCalendarWidget(calendarHeaderFromText, calendarHeaderToText);
 
     }
 
@@ -110,7 +111,8 @@ public class AndroidTests extends TestBase {
     @Severity(SeverityLevel.NORMAL)
     void setNotificationsReceiveTest() {
         AppScreens.checkSkipLink();
-        AppScreens.notificationComponent.setNotificationSwitcher(notificationsWidgetOn, notificationsWidgetOff);
+        AppScreens.notificationComponent
+                .setNotificationSwitcher(notificationsWidgetOn, notificationsWidgetOff);
 
     }
 

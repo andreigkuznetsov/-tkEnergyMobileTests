@@ -11,10 +11,10 @@ import static tests.TestData.settingsText;
 
 public class NotificationComponent {
 
-    private SelenideElement   gamburgerMenu = $(byClassName("android.widget.ImageView")),
-            settingsTitle = $(MobileBy.id("ru.nrg_tk.mobileclient:id/title")),
-            headerTextArea = $(byClassName("android.widget.TextView")),
-            switchWidget = $(MobileBy.id("ru.nrg_tk.mobileclient:id/switchWidget"));
+    private final SelenideElement gamburgerMenu = $(byClassName("android.widget.ImageView"));
+    private final SelenideElement settingsTitle = $(MobileBy.id("ru.nrg_tk.mobileclient:id/title"));
+    private final SelenideElement headerTextArea = $(byClassName("android.widget.TextView"));
+    private final SelenideElement switchWidget = $(MobileBy.id("ru.nrg_tk.mobileclient:id/switchWidget"));
 
     public void setNotificationSwitcher(String notificationsWidgetOn, String notificationsWidgetOff) {
 
