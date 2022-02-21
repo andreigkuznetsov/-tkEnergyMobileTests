@@ -17,7 +17,9 @@
 
 <b>Java, Selenide, Selenoid, Docker, Browserstack, Appium, Android Studio, Gradle, JUnit5, Allure Reports, TestOps, GitHub, Jenkins, RestAssured, Telegram (уведомления), Jira</b>
 #
-- В данном проекте автотесты написаны на <b>Java</b> с использованием фреймворка <b>Selenide</b> для UI-тестов и библиотеки <b>REST-Assured</b> для записи видео прохождения тестов.
+- В данном проекте UI автотесты написаны на <b>Java</b> с использованием фреймворка <b>Selenide</b>
+
+- При помощи библиотеки <b>REST-Assured</b> реализована запись видео прохождения тестов.
 
 - Для сборки проекта используется <b>Gradle</b>.
 
@@ -183,36 +185,38 @@ COMMENT - комментарий, который отображается в с�
 
 #### Overview дашборд
 
-![testops_overview_dashboard](...)
-
+![testops_overview_dashboard](/img/pics/testops_overview_dashboard.png)
+#
 #### Дашборд по типам тестов
 
-![testops_automation_dashboard](...)
-
+![testops_automation_dashboard](/img/pics/testops_automation_dashboard.png)
+#
 #### Дашборд по тестовым стендам
 
-![testops_stages_dashboard](...)
-
+![testops_stages_dashboard](/img/pics/testops_stages_dashboard.png)
+#
 #### Дашборд с аналитикой по команде
 
-![testops_team_dashboard](...)
-
+![testops_team_dashboard](/img/pics/testops_team_dashboard.png)
+#
 #### Результаты запусков тестовых прогонов
 
-![testops_launches_dashboard](...)
-
+![testops_launches_dashboard](/img/pics/testops_launches_dashboard.png)
+#
 #### Страница с test-планами
 
-![testops_launches_dashboard](...)
-
-#### Пример списка тестов и их прохождения
+![testops_testplans_dashboard](/img/pics/testops_testplans_dashboard.png)
 #
+#### Пример списка тестов и их прохождения
+
 ![testops_cases_dashboard](/img/pics/testops_cases_dashboard.png)
 #
 ## Интеграция с Jira:
 ### Запускаемые кейсы и их результаты можно добавить в [Jira](https://jira.autotests.cloud/browse/HOMEWORK-338)
 
-![jira_issue_338](/img/pics/jira_issue_338.png)
+<p align="left">
+<img src="/img/pics/jira_issue_338.png">
+</p>
 
 ## Интеграция с Telegram:
 ### После прохождения тестов, в telegram канал приходит оповещение с результами
