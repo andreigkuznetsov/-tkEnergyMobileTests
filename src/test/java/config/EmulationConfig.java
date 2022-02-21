@@ -23,6 +23,3 @@ public interface EmulationConfig extends Config {
     @Key("appUrl")
     String appURL();
 }
-
-
-

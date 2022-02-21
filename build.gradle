@@ -27,7 +27,7 @@ allure {
 }
 
 dependencies {
-    implementation 'io.qameta.allure:allure-java-commons:2.16.1'
+    implementation 'io.qameta.allure:allure-java-commons:$allureVersion'
     testImplementation(
             "org.aspectj:aspectjweaver:1.9.6",
             "com.codeborne:selenide:5.25.0",

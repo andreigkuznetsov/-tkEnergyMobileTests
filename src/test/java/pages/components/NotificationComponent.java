@@ -17,7 +17,6 @@ public class NotificationComponent {
     private final SelenideElement switchWidget = $(MobileBy.id("ru.nrg_tk.mobileclient:id/switchWidget"));
 
     public void setNotificationSwitcher(String notificationsWidgetOn, String notificationsWidgetOff) {
-
         step("Активируем гамбургер-меню", () ->
                 gamburgerMenu.click());
 
@@ -37,4 +36,3 @@ public class NotificationComponent {
                 switchWidget.shouldHave(text(notificationsWidgetOff)));
     }
 }
-

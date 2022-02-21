@@ -15,7 +15,6 @@ public class CalendarComponent {
     private final SelenideElement calendarOkButton = $(MobileBy.id("ru.nrg_tk.mobileclient:id/mdtp_ok"));
 
     public void setCalendarWidget(String calendarHeaderFromText, String calendarHeaderToText) {
-
         step("Открываем каледарь для редактирования", () ->
                 calendarLink.click());
 
@@ -35,6 +34,3 @@ public class CalendarComponent {
                 calendarLink.shouldBe(visible));
     }
 }
-
-
-

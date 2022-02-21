@@ -39,5 +39,4 @@ public class AllureAttachments {
     public static String getSessionId() {
         return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
     }
-
 }

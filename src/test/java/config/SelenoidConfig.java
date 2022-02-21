@@ -32,6 +32,3 @@ public interface SelenoidConfig extends Config {
     @Key("password")
     String selenoidPassword();
 }
-
-
-

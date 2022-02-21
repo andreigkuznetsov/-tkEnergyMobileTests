@@ -27,10 +27,5 @@ public interface BrowserStackConfig extends Config {
     String device();
 
     @Key("osVersion")
-    String os_version();
+    String osVersion();
 }
-
-
-
-
-

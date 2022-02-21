@@ -74,7 +74,7 @@ public class AndroidMobileDriver implements WebDriverProvider {
         desiredCapabilities.setCapability("autoGrantPermissions", "true");
 
         desiredCapabilities.setCapability("device", browserStackConfig.device());
-        desiredCapabilities.setCapability("osVersion", browserStackConfig.os_version());
+        desiredCapabilities.setCapability("osVersion", browserStackConfig.osVersion());
         desiredCapabilities.setCapability("app", browserStackConfig.app());
 
         return new AndroidDriver<>(BrowserStackHelper.getBrowserstackUrl(), desiredCapabilities);
@@ -95,7 +95,5 @@ public class AndroidMobileDriver implements WebDriverProvider {
         desiredCapabilities.setCapability("enableVideo", true);
 
         return new AndroidDriver<>(SelenoidHelper.getSelenoidServerUrl(), desiredCapabilities);
-
     }
-
 }
