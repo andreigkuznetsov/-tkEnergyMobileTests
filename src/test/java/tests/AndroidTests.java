@@ -30,7 +30,6 @@ public class AndroidTests extends TestBase {
         AppScreens.checkForgetPassLink()
                 .checkForgetPassScreen()
                 .returnToMainScreen();
-
     }
 
     @Test
@@ -46,7 +45,6 @@ public class AndroidTests extends TestBase {
         AppScreens.checkRegistrationLink()
                 .checkRegistrationScreen()
                 .returnToMainScreen();
-
     }
 
     @Test
@@ -62,7 +60,6 @@ public class AndroidTests extends TestBase {
         AppScreens.checkSkipLink();
         AppScreens.calendarComponent
                 .setCalendarWidget(calendarHeaderFromText, calendarHeaderToText);
-
     }
 
     @Test
@@ -79,7 +76,6 @@ public class AndroidTests extends TestBase {
                 .checkInvoiceSearchField()
                 .checkInvoiceSearchText()
                 .returnToMainScreen();
-
     }
 
     @Test
@@ -97,7 +93,6 @@ public class AndroidTests extends TestBase {
                 .checkSettingsLink()
                 .checkSettingsText()
                 .checkSettingsAppVerText();
-
     }
 
     @Test
@@ -113,7 +108,5 @@ public class AndroidTests extends TestBase {
         AppScreens.checkSkipLink();
         AppScreens.notificationComponent
                 .setNotificationSwitcher(notificationsWidgetOn, notificationsWidgetOff);
-
     }
-
 }

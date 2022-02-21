@@ -27,7 +27,6 @@ allure {
 }
 
 dependencies {
-    implementation 'io.qameta.allure:allure-java-commons:$allureVersion'
     testImplementation(
             "org.aspectj:aspectjweaver:1.9.6",
             "com.codeborne:selenide:5.25.0",
@@ -48,10 +47,8 @@ tasks.withType(JavaCompile) {
 }
 
 tasks.withType(Test) {
-
     systemProperties(System.getProperties())
     useJUnitPlatform()
-
     testLogging {
         lifecycle {
 //            events "started", "failed"
