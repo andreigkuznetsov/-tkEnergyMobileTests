@@ -10,7 +10,9 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import pages.AppScreens;
+import pages.SearchFieldSteps;
+import pages.SettingsScreensSteps;
+import pages.StartScreensSteps;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
@@ -18,8 +20,9 @@ import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static helpers.AllureAttachments.getSessionId;
 
 public class TestBase {
-
-    AppScreens AppScreens = new AppScreens();
+    StartScreensSteps startScreensSteps = new StartScreensSteps();
+    SearchFieldSteps searchFieldSteps = new SearchFieldSteps();
+    SettingsScreensSteps settingsScreensSteps = new SettingsScreensSteps();
 
     @BeforeAll
     public static void setup() {

@@ -27,7 +27,7 @@ public class AndroidTests extends TestBase {
     @Story("Экраны авторизации и регистрации в приложении")
     @Severity(SeverityLevel.BLOCKER)
     void passRecoveryScreenTest() {
-        AppScreens.checkForgetPassLink()
+        startScreensSteps.checkForgetPassLink()
                 .checkForgetPassScreen()
                 .returnToMainScreen();
     }
@@ -42,7 +42,7 @@ public class AndroidTests extends TestBase {
     @Story("Экраны авторизации и регистрации в приложении")
     @Severity(SeverityLevel.BLOCKER)
     void userRegistrationScreenTest() {
-        AppScreens.checkRegistrationLink()
+        startScreensSteps.checkRegistrationLink()
                 .checkRegistrationScreen()
                 .returnToMainScreen();
     }
@@ -57,8 +57,8 @@ public class AndroidTests extends TestBase {
     @Story("Поиск накладных на перевозку")
     @Severity(SeverityLevel.NORMAL)
     void calendarScreenTest() {
-        AppScreens.checkSkipLink();
-        AppScreens.calendarComponent
+        startScreensSteps.checkSkipLink();
+        settingsScreensSteps.calendarComponent
                 .setCalendarWidget(calendarHeaderFromText, calendarHeaderToText);
     }
 
@@ -72,10 +72,10 @@ public class AndroidTests extends TestBase {
     @Story("Поиск накладных на перевозку")
     @Severity(SeverityLevel.CRITICAL)
     void searchInvoiceTest() {
-        AppScreens.checkSkipLink()
-                .checkInvoiceSearchField()
-                .checkInvoiceSearchText()
-                .returnToMainScreen();
+        startScreensSteps.checkSkipLink();
+        searchFieldSteps.checkInvoiceSearchField()
+                .checkInvoiceSearchText();
+        startScreensSteps.returnToMainScreen();
     }
 
     @Test
@@ -88,8 +88,8 @@ public class AndroidTests extends TestBase {
     @Story("Раздел \"Настройки\"")
     @Severity(SeverityLevel.CRITICAL)
     void settingsScreenTest() {
-        AppScreens.checkSkipLink()
-                .checkSettingsGamMenu()
+        startScreensSteps.checkSkipLink();
+        settingsScreensSteps.checkSettingsGamMenu()
                 .checkSettingsLink()
                 .checkSettingsText()
                 .checkSettingsAppVerText();
@@ -105,8 +105,8 @@ public class AndroidTests extends TestBase {
     @Story("Раздел \"Настройки\"")
     @Severity(SeverityLevel.NORMAL)
     void setNotificationsReceiveTest() {
-        AppScreens.checkSkipLink();
-        AppScreens.notificationComponent
+        startScreensSteps.checkSkipLink();
+        settingsScreensSteps.notificationComponent
                 .setNotificationSwitcher(notificationsWidgetOn, notificationsWidgetOff);
     }
 }
